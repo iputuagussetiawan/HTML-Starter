@@ -1,6 +1,6 @@
 # HTML Webpack Starters for reference
 
-A collection of different Webpack setups for quick referencing or starting from.
+This Beginner template was created to make it easier to setup the webpack and package assessment that you use in making HTML CSS Javascript projects.
 
 ## Start using for a new project, or playground
 
