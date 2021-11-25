@@ -6,9 +6,6 @@
 
 @use "../webfonts/lato";
 
-//IMPORT LAYOUT
-@use "layout/navigation";
-
 // IMPORT THE COMPONENTS
 @use "components/animations";
 @use "components/buttons";
@@ -26,6 +23,9 @@
 @use "sections/portfolio";
 @use "sections/get-started";
 @use "sections/footer";
+
+//IMPORT LAYOUT
+@use "layout/navigation";
 
 body {
 	font-family: "Lato", sans-serif;

@@ -7,7 +7,7 @@
 
 .sidebar {
 	right: -100%;
-	max-width: 300px;
+	max-width: 320px;
 	transition: all ease 0.4s;
 	overflow-y: auto;
 	z-index: 1;
@@ -53,4 +53,6 @@
 .navbar-light .navbar-toggler {
 	color: rgba(0, 0, 0, 0.55);
 	border-color: transparent;
+	position: relative;
+	z-index: 100;
 }

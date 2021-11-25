@@ -3091,6 +3091,92 @@ function within(min, value, max) {
 
 /***/ }),
 
+/***/ "./src/js/layout/navigation.js":
+/*!*************************************!*\
+  !*** ./src/js/layout/navigation.js ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Navigation)
+/* harmony export */ });
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var Navigation = /*#__PURE__*/function () {
+  function Navigation() {
+    _classCallCheck(this, Navigation);
+  }
+
+  _createClass(Navigation, [{
+    key: "test",
+    value: function test() {
+      console.log('hello world');
+    }
+  }]);
+
+  return Navigation;
+}(); // class Navigation {
+//     navigationStart () {
+//         console.log('Test Navigation')
+//     }
+// }
+// const body = document.querySelector("body");
+// const burgerMenu = document.querySelector(".burger");
+// const openSideNav = () => mainNavigation.classList.add("active");
+// const closeSideNav = () => mainNavigation.classList.remove("active");
+// burgerMenu.onclick = function () {
+// 	openMenu();
+// };
+// var openMenu = () => {
+// 	if (burgerMenu.classList.contains("activated")) {
+// 		var delayInMilliseconds = 100; //5 second
+// 		setTimeout(function () {
+// 			burgerMenu.classList.remove("activated");
+// 			body.classList.remove("no-scroll");
+// 			closeSideNav();
+// 		}, delayInMilliseconds);
+// 	} else {
+// 		burgerMenu.classList.add("activated");
+// 		body.classList.add("no-scroll");
+// 		openSideNav();
+// 	}
+// };
+// document.addEventListener("swiped-right", openSideNav);
+// document.addEventListener("swiped-left", closeSideNav);
+// toggler.addEventListener("click", openSideNav);
+// document.addEventListener("DOMContentLoaded", function(){
+// 	if (window.innerWidth > 992) {
+// 		document.querySelectorAll('.navbar .nav-item').forEach(function(everyitem){
+// 			everyitem.addEventListener('mouseover', function(e){
+// 				let el_link = this.querySelector('a[data-bs-toggle]');
+// 				if(el_link != null){
+// 					let nextEl = el_link.nextElementSibling;
+// 					el_link.classList.add('show');
+// 					nextEl.classList.add('show');
+// 				}
+// 			});
+// 			everyitem.addEventListener('mouseleave', function(e){
+// 				let el_link = this.querySelector('a[data-bs-toggle]');
+// 				if(el_link != null){
+// 					let nextEl = el_link.nextElementSibling;
+// 					el_link.classList.remove('show');
+// 					nextEl.classList.remove('show');
+// 				}
+// 			})
+// 		});
+// 	}
+// }); 
+
+
+
+
+/***/ }),
+
 /***/ "./node_modules/bootstrap/dist/js/bootstrap.esm.js":
 /*!*********************************************************!*\
   !*** ./node_modules/bootstrap/dist/js/bootstrap.esm.js ***!
@@ -11435,6 +11521,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../scss/style.scss */ "./src/scss/style.scss");
 /* harmony import */ var locomotive_scroll__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! locomotive-scroll */ "./node_modules/locomotive-scroll/dist/locomotive-scroll.esm.js");
 /* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! bootstrap */ "./node_modules/bootstrap/dist/js/bootstrap.esm.js");
+/* harmony import */ var _layout_navigation__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./layout/navigation */ "./src/js/layout/navigation.js");
+
 
 
 
@@ -11444,6 +11532,8 @@ var mainNavigation = document.querySelector(".main-navigation");
 var overlay = mainNavigation.querySelector(".overlay");
 var toggler = mainNavigation.querySelector(".navbar-toggler");
 var burgerMenu = document.querySelector(".burger");
+var nav = new _layout_navigation__WEBPACK_IMPORTED_MODULE_3__["default"]();
+nav.test();
 
 var openSideNav = function openSideNav() {
   return mainNavigation.classList.add("active");
@@ -11464,17 +11554,45 @@ var openMenu = function openMenu() {
     setTimeout(function () {
       burgerMenu.classList.remove("activated");
       body.classList.remove("no-scroll");
+      closeSideNav();
     }, delayInMilliseconds);
   } else {
     burgerMenu.classList.add("activated");
     body.classList.add("no-scroll");
+    openSideNav();
   }
 };
 
 document.addEventListener("swiped-right", openSideNav);
 document.addEventListener("swiped-left", closeSideNav);
-toggler.addEventListener("click", openSideNav);
-overlay.addEventListener("click", closeSideNav);
+toggler.addEventListener("click", openSideNav); // overlay.addEventListener("click", closeSideNav);
+
+document.addEventListener("DOMContentLoaded", function () {
+  // make it as accordion for smaller screens
+  if (window.innerWidth > 992) {
+    document.querySelectorAll('.navbar .nav-item').forEach(function (everyitem) {
+      everyitem.addEventListener('mouseover', function (e) {
+        var el_link = this.querySelector('a[data-bs-toggle]');
+
+        if (el_link != null) {
+          var nextEl = el_link.nextElementSibling;
+          el_link.classList.add('show');
+          nextEl.classList.add('show');
+        }
+      });
+      everyitem.addEventListener('mouseleave', function (e) {
+        var el_link = this.querySelector('a[data-bs-toggle]');
+
+        if (el_link != null) {
+          var nextEl = el_link.nextElementSibling;
+          el_link.classList.remove('show');
+          nextEl.classList.remove('show');
+        }
+      });
+    });
+  } // end if innerWidth
+
+}); // DOMContentLoaded  end
 })();
 
 /******/ })()
