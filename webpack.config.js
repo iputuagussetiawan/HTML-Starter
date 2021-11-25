@@ -20,7 +20,6 @@ const output = {
 	filename: '[name].js'
 };
 const rules = [
-	
 	{
 		test: /\.js$/,
 		exclude: /node_modules/,
