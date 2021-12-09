@@ -4,29 +4,20 @@
 @use "../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
 @use "../../node_modules/@fortawesome/fontawesome-free/scss/solid.scss";
 
+//IMPORT CUSTOM FONT
 @use "../webfonts/lato";
 
-// IMPORT THE COMPONENTS
-@use "components/animations";
-@use "components/buttons";
-@use "components/mixins";
-@use "components/typography";
-@use "components/burgermenu";
+//IMPORT CUSTOM BOOTSTRAP
+@use "custom";
 
-// IMPORT THE SECTIONS
-@use "sections/navbar";
-@use "sections/intro-section";
-@use "sections/campanies";
-@use "sections/services";
-@use "sections/testimonials";
-@use "sections/faq";
-@use "sections/portfolio";
-@use "sections/get-started";
-@use "sections/footer";
+//IMPORT BASE
+@use "base/reset";
+@use "base/animations";
+@use "base/typography";
 
 //IMPORT LAYOUT
 @use "layout/navigation";
 
-body {
-	font-family: "Lato", sans-serif;
-}
+// IMPORT THE COMPONENTS
+@use "components/burgermenu";
+@use "components/buttons";

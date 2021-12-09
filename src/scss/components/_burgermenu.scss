@@ -1,11 +1,11 @@
 @use "sass:math";
-@use "../custom" as *;
+@use "../config/variable" as *;
 $background-color: #191a1e;
 
 //Burger Variables - COPY
 $burger-width: 45px;
 $burger-height: 40px;
-$burger-thickness: 3px;
+$burger-thickness: 2px;
 $burger-color: $black-400;
 $burger-activated-color: $black-400;
 
