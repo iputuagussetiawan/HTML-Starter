@@ -10,6 +10,8 @@ const overlay = mainNavigation.querySelector(".overlay");
 const toggler = mainNavigation.querySelector(".navbar-toggler");
 const burgerMenu = document.querySelector(".burger");
 
+console.log('test')
+
 var nav = new navigation()
 nav.test()
 
@@ -38,21 +40,21 @@ document.addEventListener("swiped-left", closeSideNav);
 toggler.addEventListener("click", openSideNav);
 // overlay.addEventListener("click", closeSideNav);
 
-document.addEventListener("DOMContentLoaded", function(){
+document.addEventListener("DOMContentLoaded", function () {
 	// make it as accordion for smaller screens
 	if (window.innerWidth > 992) {
-		document.querySelectorAll('.navbar .nav-item').forEach(function(everyitem){
-			everyitem.addEventListener('mouseover', function(e){
+		document.querySelectorAll('.navbar .nav-item').forEach(function (everyitem) {
+			everyitem.addEventListener('mouseover', function (e) {
 				let el_link = this.querySelector('a[data-bs-toggle]');
-				if(el_link != null){
+				if (el_link != null) {
 					let nextEl = el_link.nextElementSibling;
 					el_link.classList.add('show');
 					nextEl.classList.add('show');
 				}
 			});
-			everyitem.addEventListener('mouseleave', function(e){
+			everyitem.addEventListener('mouseleave', function (e) {
 				let el_link = this.querySelector('a[data-bs-toggle]');
-				if(el_link != null){
+				if (el_link != null) {
 					let nextEl = el_link.nextElementSibling;
 					el_link.classList.remove('show');
 					nextEl.classList.remove('show');
@@ -61,5 +63,5 @@ document.addEventListener("DOMContentLoaded", function(){
 		});
 	}
 	// end if innerWidth
-}); 
+});
 	// DOMContentLoaded  end
